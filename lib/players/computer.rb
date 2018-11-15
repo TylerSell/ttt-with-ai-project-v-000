@@ -26,7 +26,7 @@ module Players
           input = 5 
         when opposite_corner != nil && board.taken?(opposite_corner) == false 
           input = opposite_corner
-        when corner 
+        when corner
           input = corner + 1 
         else 
           until !board.taken?(input)
@@ -67,7 +67,8 @@ module Players
     end
     
     def corner 
-      corners.find {|corner| board.cells(corner) == " "}
+      corners 
+      CORNERS.find {|corner| board.cells[corner] == " "}
     end
     
     def opposite_corner 
